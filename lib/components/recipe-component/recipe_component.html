@@ -1,3 +1,10 @@
 <div class="input-group">
     <input #rec type="text" (keyup.enter)="searchRecipes(rec.value)">
 </div>
+<div class="recipes">
+    <div class="container-fluid">
+        <div *ngFor="let rec of recipes" class="singlerecipe">
+            <recipeimage-component [imageurl]="rec.image_url" [alttext]="rec.title"></recipeimage-component>
+        </div>
+    </div>
+</div>
