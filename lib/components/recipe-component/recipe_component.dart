@@ -9,5 +9,11 @@ styleUrls: const ['recipe_component.css']
 )
 
 class RecipeComponent {
+  final RecipeService _recservice;
 
+  RecipeComponent(this._recservice);
+
+  searchRecipes(String value) {
+    _recservice.loadData(value);
+  }
 }
