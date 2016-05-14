@@ -3,7 +3,7 @@ import 'package:angularattack2016_mswift42/services/Recipe.dart';
 import 'package:angularattack2016_mswift42/services/RecipeService.dart';
 import 'package:angularattack2016_mswift42/components/recipeimage-component/recipeimage_component.dart';
 import 'package:angularattack2016_mswift42/components/title-component/title_component.dart';
-import 'package:angularattack2016_mswift42/components/publisher-component/publisher_component.dart';
+import 'package:angularattack2016_mswift42/components/publisherurl-component/publisherurl_component.dart';
 
 @Component(
     selector: 'recipe-component',
@@ -14,7 +14,7 @@ import 'package:angularattack2016_mswift42/components/publisher-component/publis
     directives: const [
       RecipeimageComponent,
       TitleComponent,
-      PublisherComponent
+      PublisherurlComponent
     ])
 class RecipeComponent {
   final RecipeService _recservice;
