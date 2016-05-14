@@ -23,8 +23,8 @@ class RecipeComponent {
   RecipeComponent(this._recservice);
 
   searchRecipes(String value) {
+    _recservice.recipes = [];
     _recservice.loadData(value);
     recipes = _recservice.recipes;
-    recipes.forEach((i) => print(i.image_url));
   }
 }
