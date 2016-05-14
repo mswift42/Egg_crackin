@@ -6,6 +6,7 @@
         <div *ngFor="let rec of recipes" class="singlerecipe">
             <title-component [title]="rec.title" [sourceurl]="rec.source_url"></title-component>
             <recipeimage-component [imageurl]="rec.image_url" [alttext]="rec.title"></recipeimage-component>
+            <publisher-component [publisher]="rec.publisher" [publisher_url]="rec.publisher_url"></publisher-component>
         </div>
     </div>
 </div>

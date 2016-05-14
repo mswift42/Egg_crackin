@@ -3,14 +3,19 @@ import 'package:angularattack2016_mswift42/services/Recipe.dart';
 import 'package:angularattack2016_mswift42/services/RecipeService.dart';
 import 'package:angularattack2016_mswift42/components/recipeimage-component/recipeimage_component.dart';
 import 'package:angularattack2016_mswift42/components/title-component/title_component.dart';
+import 'package:angularattack2016_mswift42/components/publisher-component/publisher_component.dart';
 
 @Component(
     selector: 'recipe-component',
-templateUrl: 'recipe_component.html',
-styleUrls: const ['recipe_component.css'],
-directives: const [RecipeimageComponent, TitleComponent]
-)
-
+    templateUrl: 'recipe_component.html',
+    styleUrls: const [
+      'recipe_component.css'
+    ],
+    directives: const [
+      RecipeimageComponent,
+      TitleComponent,
+      PublisherComponent
+    ])
 class RecipeComponent {
   final RecipeService _recservice;
   List<Recipe> recipes;
