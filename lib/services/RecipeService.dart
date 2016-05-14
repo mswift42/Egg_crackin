@@ -29,6 +29,9 @@ class RecipeService {
     rec.forEach((i)=> recipes.add(new Recipe(i["publisher"], i["title"],
         i["source_url"], i["image_url"], i["publisher_url"])));
  }
+  List<String> publisherNames() {
+    return recipes.map((i) => i.publisher);
+  }
 
 }
 
