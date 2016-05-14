@@ -8,4 +8,5 @@ styleUrls: const ['publisher_component.css']
 
 class PublisherComponent {
   @Input() String publisher;
+  @Input() String publisher_url;
 }
