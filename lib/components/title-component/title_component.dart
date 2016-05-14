@@ -7,4 +7,6 @@ import 'package:angular2/core.dart';
 class TitleComponent {
   @Input()
   String title;
+  @Input()
+  String sourceurl;
 }
