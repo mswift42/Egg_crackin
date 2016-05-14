@@ -1,12 +1,17 @@
-<div class="input-group">
-    <input #rec type="text" (keyup.enter)="searchRecipes(rec.value)">
+<div class="container input-group">
+    <div class="row searchbox">
+        <input #rec class="form-control" type="text" id="recipesearch"
+               placeholder="Search" (keyup.enter)="searchRecipes(rec.value)">
+        </div>
 </div>
 <div class="recipes">
     <div class="container-fluid">
-        <div *ngFor="let rec of recipes" class="singlerecipe">
-            <title-component [title]="rec.title" [sourceurl]="rec.source_url"></title-component>
-            <recipeimage-component [imageurl]="rec.image_url" [alttext]="rec.title"></recipeimage-component>
-            <publisher-component [publisher]="rec.publisher" [publisher_url]="rec.publisher_url"></publisher-component>
+        <div class="row">
+            <div *ngFor="let rec of recipes" class="col-xs-12 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1 singlerecipe">
+                <title-component [title]="rec.title" [sourceurl]="rec.source_url"></title-component>
+                <recipeimage-component [imageurl]="rec.image_url" [alttext]="rec.title"></recipeimage-component>
+                <publisher-component [publisher]="rec.publisher" [publisher_url]="rec.publisher_url"></publisher-component>
+            </div>
         </div>
     </div>
 </div>
