@@ -1,4 +1,5 @@
 import 'package:angularattack2016_mswift42/services/Recipe.dart';
+import 'dart:html';
 import 'package:angular2/core.dart';
 
 @Injectable()
@@ -17,5 +18,13 @@ class RecipeService {
     }
     return res;
   }
+  void loadData(String query) {
+    var request = HttpRequest.getString(queryUrl(query)).then(onDataLoaded);
+  }
+
+  void onDataLoaded(String response) {
+    print(response);
+  }
+
 }
 
