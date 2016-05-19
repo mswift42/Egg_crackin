@@ -1,5 +1,9 @@
 <nav class="navbar navbar-fixed-top navbar-dark" style="background-color: #42747c">
     <div class="container">
-        <a class="navbar-brand" href="#">Egg crackin!</a>
+        <a [routerLink]="['Recipes']" class="navbar-brand">Egg crackin!</a>
+        <a [routerLink]="['Favourites']" class="nav-link">Favourites</a>
     </div>
 </nav>
+<div class="container-fluid">
+    <h3>router outlet</h3>
+<router-outlet></router-outlet>

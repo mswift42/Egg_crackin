@@ -30,7 +30,7 @@ class RecipeService {
         i["source_url"], i["image_url"], i["publisher_url"])));
  }
   List<String> publisherNames() {
-    return recipes.map((i) => i.publisher);
+    return new List<String>.from(new Set.from(recipes.map((i) => i.publisher)));
   }
 
 }

@@ -1,0 +1,7 @@
+<div *ngIf="favourites != null" class="favouritelist">
+   <div *ngFor="let fav of favourites" class="singlefavourite">
+      <title-component [title]="fav.title" [sourceurl]="fav.source_url"></title-component>
+      <img src="{{fav.source_url}}" alt="{{fav.title}}">
+      <publisherurl-component [publisher]="fav.publisher" [publisher_url]="fav.publisher_url"></publisherurl-component>
+   </div>
+</div>
