@@ -12,12 +12,14 @@ import 'package:angularattack2016_mswift42/components/favourite-component/favour
     templateUrl: 'app_component.html',
     providers: const [
       RecipeService,
-      FavouritesService
+      FavouritesService,
+      ROUTER_PROVIDERS
     ],
     directives: const [
       NavbarComponent,
       RecipeComponent,
-      PublisherlistComponent
+      PublisherlistComponent,
+      ROUTER_DIRECTIVES
     ])
 @RouteConfig(const [
   const Route(
