@@ -1,9 +1,31 @@
-<nav class="navbar navbar-fixed-top navbar-dark" style="background-color: #42747c">
-    <div class="container">
-        <a [routerLink]="['Recipes']" class="navbar-brand">Egg crackin!</a>
-        <a [routerLink]="['Favourites']" class="nav-link">Favourites</a>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+            mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <div class="mdl-layout-title">Egg Crackin!</div>
+            <div class="mdl-layout-spacer"></div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+                <label class="mdl-button mdl-js-button mdl-button--icon"
+                       for="fixed-header-drawer-exp">
+                    <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" name="sample"
+                           id="fixed-header-drawer-exp">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Egg Crackin!</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="">Bookmarks</a>
+        </nav>
     </div>
-</nav>
-<div class="container-fluid">
-    <h3>router outlet</h3>
-<router-outlet></router-outlet>
+    <main class="mdl-layout__content">
+        <div class="page-content">
+            <ng-content></ng-content>
+        </div>
+    </main>
+</div>
