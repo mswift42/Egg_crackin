@@ -1,19 +1,18 @@
-<div class="container input-group">
-    <div class="row searchbox">
-        <input #rec class="form-control" type="text" id="recipesearch"
+<div class="recipesearch">
+    <div class="mdl-textfield mdl-js-textfield">
+        <input #rec class="mdl-textfield__input" type="text" id="recipesearch"
                placeholder="Search" (keyup.enter)="searchRecipes(rec.value)">
-        </div>
+        <label class="mdl-textfield__label" for="recipesearch">Search...</label>
+    </div>
 </div>
 <div class="recipes">
-    <div class="container-fluid">
-        <div class="row">
-            <div *ngFor="let rec of recipes" class="col-xs-12 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1 singlerecipe">
-                <title-component [title]="rec.title" [sourceurl]="rec.source_url"></title-component>
-                <recipeimage-component [imageurl]="rec.image_url" [alttext]="rec.title"></recipeimage-component>
-                <publisherurl-component [publisher]="rec.publisher" [publisher_url]="rec.publisher_url"></publisherurl-component>
-                <favourite-component [publisher]="rec.publisher" [title]="rec.title" [source_url]="rec.source_url"
-                                     [image_url]="rec.image_url" [publisher_url]="rec.publisher_url"></favourite-component>
-            </div>
+    <div class="mdl-grid">
+        <div *ngFor="let rec of recipes" class="mdl-card mdl-shadow--2dp recipecard">
+            <title-component [title]="rec.title" [sourceurl]="rec.source_url"></title-component>
+            <recipeimage-component [imageurl]="rec.image_url" [alttext]="rec.title"></recipeimage-component>
+            <publisherurl-component [publisher]="rec.publisher" [publisher_url]="rec.publisher_url"></publisherurl-component>
+            <favourite-component [publisher]="rec.publisher" [title]="rec.title" [source_url]="rec.source_url"
+                                 [image_url]="rec.image_url" [publisher_url]="rec.publisher_url"></favourite-component>
         </div>
     </div>
 </div>
