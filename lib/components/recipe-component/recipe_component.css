@@ -1,14 +1,16 @@
-.searchcontainer {
-    width:80%;
+.recipesearch {
+    margin:3em;
 }
-.searchbox {
-    margin-left:auto;
-    margin-right:auto;
+.recipecard {
+    margin-top:2em;
 }
-.singlerecipe {
-    margin-top:1em;
-    padding:1em;
-    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.12);
-    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.12);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+.bottomrow {
+    display: flex;
+    flex-direction:row;
+    flex-grow: 1;
+    align-items: baseline;
+    align-content:flex-end;
+}
+.bottomrow > favourite-component {
+    margin-top:2em;
 }
