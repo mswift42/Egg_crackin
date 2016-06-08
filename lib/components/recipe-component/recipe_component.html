@@ -7,7 +7,7 @@
 </div>
 <div class="recipes">
   <div class="mdl-grid">
-    <div *ngFor="let rec of recipes" class="mdl-cell--3-col mdl-cell--1-offset mdl-card mdl-shadow--2dp recipecard">
+    <div *ngFor="let rec of recipes" class="mdl-cell mdl-cell--3-col-desktop mdl-cell--12-col-phone mdl-shadow--2dp recipecard">
       <title-component [title]="rec.title" [sourceurl]="rec.source_url"></title-component>
       <recipeimage-component [imageurl]="rec.image_url" [alttext]="rec.title"></recipeimage-component>
       <div class="bottomrow">
