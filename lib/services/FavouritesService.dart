@@ -20,6 +20,14 @@ class FavouritesService {
     localStorage[_storagename] = JSON.encode(recipes);
     print(JSON.decode(localStorage[_storagename]));
   }
+  void deleteInStorage(Recipe recipe) {
+    var recipes = [];
+    if (localStorage[_storagename] != null) {
+      recipes = JSON.decode(localStorage[_storagename]);
+    }
+    recipes = recipes.where((i) => i["source_url"] != recipe.source_url);
+    localStorage[_storagename] = JSON.encode(recipes);
+  }
   List<Recipe> loadFromStorage() {
     if (localStorage[_storagename] != null) {
       List<Map> favs = JSON.decode(localStorage[_storagename]);
