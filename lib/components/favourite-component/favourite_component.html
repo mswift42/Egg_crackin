@@ -1,7 +1,5 @@
 <div class="mdl-cell mdl-cell--1-col mdl-cell--bottom">
-    <div class="tooltip-wrapper">
-        <i  class="material-icons tooltip-icon"
-            (click)="bookmarkRecipe()">bookmark</i>
-        <span class="tooltip">Bookmark Recipe</span>
-        </div>
+    <tooltip-component message="Bookmark Recipe">
+        <i class="material-icons" (click)="bookmarkRecipe()">bookmark</i>
+    </tooltip-component>
 </div>
