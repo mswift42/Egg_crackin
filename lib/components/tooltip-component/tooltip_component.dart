@@ -7,6 +7,4 @@ import 'package:angular2/core.dart';
 class TooltipComponent {
   @Input()
   String message;
-  @Input()
-  String target;
 }

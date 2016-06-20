@@ -1,0 +1,38 @@
+.tooltip-wrapper {
+    position: relative;
+    display:inline;
+}
+
+.tooltip-wrapper span {
+    position: absolute;
+    width:9em;
+    color:#fff;
+    background: #000;
+    height:3em;
+    line-height:3em;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    text-align: center;
+    visibility: hidden;
+}
+
+.tooltip-wrapper span:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    width: 0; height: 0;
+    border-top: 8px solid #000000;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+div:hover.tooltip-wrapper span {
+    visibility: visible;
+    opacity: 0.8;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -76px;
+    z-index: 999;
+}
