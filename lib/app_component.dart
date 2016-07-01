@@ -6,6 +6,7 @@ import 'package:angularattack2016_mswift42/services/RecipeService.dart';
 import 'package:angularattack2016_mswift42/services/FavouritesService.dart';
 import 'package:angularattack2016_mswift42/components/publisherlist-component/publisherlist_component.dart';
 import 'package:angularattack2016_mswift42/components/favourite-component/favourite_component.dart';
+import 'package:angularattack2016_mswift42/services/SearchhistoryService.dart';
 
 @Component(
     selector: 'my-app',
@@ -13,6 +14,7 @@ import 'package:angularattack2016_mswift42/components/favourite-component/favour
     providers: const [
       RecipeService,
       FavouritesService,
+      SearchhistoryService,
       ROUTER_PROVIDERS
     ],
     directives: const [
