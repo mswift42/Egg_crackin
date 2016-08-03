@@ -6,6 +6,7 @@ import 'package:eggcrackin/services/RecipeService.dart';
 import 'package:eggcrackin/services/FavouritesService.dart';
 import 'package:eggcrackin/components/publisherlist-component/publisherlist_component.dart';
 import 'package:eggcrackin/components/favourite-component/favourite_component.dart';
+import 'package:eggcrackin/components/about-component/about_component.dart';
 import 'package:eggcrackin/services/SearchhistoryService.dart';
 
 @Component(
@@ -31,11 +32,6 @@ import 'package:eggcrackin/services/SearchhistoryService.dart';
       useAsDefault: true),
   const Route(
       path: '/favourites', name: 'Favourites', component: FavouriteComponent),
-  const Route(
-      path: '/about',
-      name: 'About',
-      component: AboutComponent
-      
-              )
+  const Route(path: '/about', name: 'About', component: AboutComponent)
 ])
-  class AppComponent {}
+class AppComponent {}
