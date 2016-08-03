@@ -1,7 +1,7 @@
 import 'package:angular2/core.dart';
 import 'package:angular2/router.dart';
-import 'package:angularattack2016_mswift42/components/recipe-component/recipe_component.dart';
-import 'package:angularattack2016_mswift42/components/favourite-component/favourite_component.dart';
+import 'package:eggcrackin/components/recipe-component/recipe_component.dart';
+import 'package:eggcrackin/components/favourite-component/favourite_component.dart';
 
 @Component(
     selector: 'navbar-component',

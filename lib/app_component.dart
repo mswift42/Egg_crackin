@@ -1,12 +1,12 @@
 import 'package:angular2/core.dart';
 import 'package:angular2/router.dart';
-import 'package:angularattack2016_mswift42/components/navbar-component/navbar_component.dart';
-import 'package:angularattack2016_mswift42/components/recipe-component/recipe_component.dart';
-import 'package:angularattack2016_mswift42/services/RecipeService.dart';
-import 'package:angularattack2016_mswift42/services/FavouritesService.dart';
-import 'package:angularattack2016_mswift42/components/publisherlist-component/publisherlist_component.dart';
-import 'package:angularattack2016_mswift42/components/favourite-component/favourite_component.dart';
-import 'package:angularattack2016_mswift42/services/SearchhistoryService.dart';
+import 'package:eggcrackin/components/navbar-component/navbar_component.dart';
+import 'package:eggcrackin/components/recipe-component/recipe_component.dart';
+import 'package:eggcrackin/services/RecipeService.dart';
+import 'package:eggcrackin/services/FavouritesService.dart';
+import 'package:eggcrackin/components/publisherlist-component/publisherlist_component.dart';
+import 'package:eggcrackin/components/favourite-component/favourite_component.dart';
+import 'package:eggcrackin/services/SearchhistoryService.dart';
 
 @Component(
     selector: 'my-app',
@@ -30,6 +30,12 @@ import 'package:angularattack2016_mswift42/services/SearchhistoryService.dart';
       component: RecipeComponent,
       useAsDefault: true),
   const Route(
-      path: '/favourites', name: 'Favourites', component: FavouriteComponent)
+      path: '/favourites', name: 'Favourites', component: FavouriteComponent),
+  const Route(
+      path: '/about',
+      name: 'About',
+      component: AboutComponent
+      
+              )
 ])
-class AppComponent {}
+  class AppComponent {}

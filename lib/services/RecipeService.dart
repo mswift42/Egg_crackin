@@ -1,4 +1,4 @@
-import 'package:angularattack2016_mswift42/services/Recipe.dart';
+import 'package:eggcrackin/services/Recipe.dart';
 import 'dart:html';
 import 'dart:convert';
 import 'package:angular2/core.dart';

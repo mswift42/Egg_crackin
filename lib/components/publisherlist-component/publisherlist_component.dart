@@ -1,5 +1,5 @@
 import 'package:angular2/core.dart';
-import 'package:angularattack2016_mswift42/services/RecipeService.dart';
+import 'package:eggcrackin/services/RecipeService.dart';
 
 
 @Component(

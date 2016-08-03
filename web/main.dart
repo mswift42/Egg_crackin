@@ -3,7 +3,7 @@
 
 import 'package:angular2/platform/browser.dart';
 
-import 'package:angularattack2016_mswift42/app_component.dart';
+import 'package:eggcrackin/app_component.dart';
 
 main() {
   bootstrap(AppComponent);
