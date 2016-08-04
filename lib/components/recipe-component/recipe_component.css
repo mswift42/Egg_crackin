@@ -1,5 +1,8 @@
-.mdl-grid {
-    justify-content: center;
+.recipeview {
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-content: center;
 }
 @media (min-width: 500px) {
     .recipecard {
@@ -15,10 +18,6 @@
 }
 .bottomrow {
     display: flex;
-    flex-direction:row;
-    flex-grow: 1;
-    align-items: flex-end;
-    align-content:flex-end;
     justify-content: space-between;
 }
 .bottomrow > favourite-component {
