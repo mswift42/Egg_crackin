@@ -2,10 +2,6 @@
     overflow: hidden;
 }
 img {
-    max-height:250px;
-    height:100%;
     max-width:100%;
-    margin:0 auto;
-    width:auto;
     align-self:center;
 }

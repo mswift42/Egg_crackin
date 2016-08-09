@@ -18,6 +18,7 @@ class SearchhistoryService {
       }
     }
   }
+  get searchHistory => _searchhistory;
 
   void saveToStorage() {
    localStorage[_storagename] = JSON.encode(_searchhistory);
