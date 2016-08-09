@@ -1,13 +1,12 @@
 import 'package:angular2/core.dart';
 import 'package:angular2/router.dart';
 import 'package:eggcrackin/components/navbar-component/navbar_component.dart';
-import 'package:eggcrackin/components/recipe-component/recipe_component.dart';
 import 'package:eggcrackin/services/RecipeService.dart';
 import 'package:eggcrackin/services/FavouritesService.dart';
-import 'package:eggcrackin/components/publisherlist-component/publisherlist_component.dart';
+import 'package:eggcrackin/services/SearchhistoryService.dart';
 import 'package:eggcrackin/components/favourite-component/favourite_component.dart';
 import 'package:eggcrackin/components/about-component/about_component.dart';
-import 'package:eggcrackin/services/SearchhistoryService.dart';
+import 'package:eggcrackin/components/recipe-component/recipe_component.dart';
 
 @Component(
     selector: 'my-app',
@@ -20,13 +19,11 @@ import 'package:eggcrackin/services/SearchhistoryService.dart';
     ],
     directives: const [
       NavbarComponent,
-      RecipeComponent,
-      PublisherlistComponent,
-      ROUTER_DIRECTIVES
     ])
+
 @RouteConfig(const [
   const Route(
-      path: '/',
+      path: '/recipes',
       name: 'Recipes',
       component: RecipeComponent,
       useAsDefault: true),
