@@ -6,7 +6,7 @@
     <div *ngFor="let rec of recipes" class="mdl-card mdl-shadow--2dp recipecard">
       <title-component [title]="rec.title" [sourceurl]="rec.source_url"></title-component>
       <recipeimage-component [imageurl]="rec.image_url" [alttext]="rec.title"></recipeimage-component>
-      <div class="bottomrow">
+      <div class="mdl-card__actions">
         <favourite-component [publisher]="rec.publisher" [title]="rec.title" [source_url]="rec.source_url"
                              [image_url]="rec.image_url" [publisher_url]="rec.publisher_url"></favourite-component>
         <publisherurl-component [publisher]="rec.publisher" [publisher_url]="rec.publisher_url"></publisherurl-component>
