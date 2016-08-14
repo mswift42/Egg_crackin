@@ -1,9 +1,5 @@
 <div class="recipesearch">
-  <div class="mdl-textfield mdl-js-textfield">
-    <input #rec class="mdl-textfield__input" type="text" id="recipesearch"
-           placeholder="Search" (keyup.enter)="searchRecipes(rec.value)">
-    <label class="mdl-textfield__label" for="recipesearch">Search...</label>
-  </div>
+  <recipe-search (onSearch)="searchRecipes($event)"></recipe-search>
 </div>
 <div class="recipes">
   <div class="recipeview">
