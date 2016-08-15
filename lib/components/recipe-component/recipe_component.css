@@ -1,15 +1,3 @@
-.recipeview {
-    display:flex;
-    flex-direction:row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-@media (min-width: 500px) {
-    .recipecard {
-        margin-left:3vw;
-        margin-right: 3vw;
-    }
-}
 .recipesearch {
     margin:3em;
 }
