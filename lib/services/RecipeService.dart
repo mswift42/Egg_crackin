@@ -20,22 +20,27 @@ class RecipeService {
     }
     return res;
   }
+
   void loadData(String query) {
     var request = HttpRequest.getString(queryUrl(query)).then(onDataLoaded);
   }
+
   String unsanitize(String s) {
     s = s.replaceAll("&nbsp;", " ");
     return s.replaceAll("&amp;", "&");
   }
 
   void onDataLoaded(String response) {
-  List<String> rec = JSON.decode(response)["recipes"];
-  rec.forEach((i)=> recipes.add(new Recipe(i["publisher"], unsanitize(i["title"]),
-        i["source_url"].toString(), i["image_url"], i["publisher_url"])));
- }
+    List<String> rec = JSON.decode(response)["recipes"];
+    rec.forEach((i) => recipes.add(new Recipe(
+        i["publisher"],
+        unsanitize(i["title"]),
+        i["source_url"].toString(),
+        i["image_url"],
+        i["publisher_url"])));
+  }
+
   List<String> publisherNames() {
     return new List<String>.from(new Set.from(recipes.map((i) => i.publisher)));
   }
-
 }
-
