@@ -7,6 +7,7 @@ import 'package:eggcrackin/components/title-component/title_component.dart';
 import 'package:eggcrackin/components/publisherurl-component/publisherurl_component.dart';
 import 'package:eggcrackin/components/favourite-component/favourite_component.dart';
 import 'package:eggcrackin/components/recipe-search/recipe-search.component.dart';
+import 'package:eggcrackin/components/recipesview-component/recipesview.component.dart';
 
 @Component(
     selector: 'recipe-component',
@@ -19,7 +20,8 @@ import 'package:eggcrackin/components/recipe-search/recipe-search.component.dart
       TitleComponent,
       PublisherurlComponent,
       FavouriteComponent,
-      RecipeSearchComponent
+      RecipeSearchComponent,
+      RecipesViewComponent
     ])
 class RecipeComponent {
   final RecipeService _recservice;
