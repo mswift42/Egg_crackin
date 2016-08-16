@@ -4,9 +4,9 @@ import 'package:eggcrackin/services/Recipe.dart';
 import 'package:eggcrackin/components/tooltip-component/tooltip_component.dart';
 
 @Component(
-    selector: 'favourite-component',
-    templateUrl: 'favourite_component.html',
-    styleUrls: const ['favourite_component.css'],
+    selector: 'bookmark-component',
+    templateUrl: 'bookmark_component.html',
+    styleUrls: const ['bookmark_component.css'],
     directives: const [TooltipComponent])
   class FavouriteComponent {
     @Input()
