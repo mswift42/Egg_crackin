@@ -8,12 +8,12 @@ import 'package:eggcrackin/services/FavouritesService.dart';
     styleUrls: const ['delete-bookmark_component.css'])
 class DeleteBookmarkComponent {
   @Input()
-  String recipe_url;
+  String source_url;
   FavouritesService _favouriteService;
 
   DeleteBookmarkComponent(this._favouriteService);
 
   deleteBookmak() {
-    _favouriteService.deleteInStorage(recipe_url);
+    _favouriteService.deleteInStorage(source_url);
   }
 }
