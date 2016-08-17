@@ -22,12 +22,20 @@ class FavouritesService {
       "image_url": recipe.image_url
     }));
     localStorage[_storagename] = JSON.encode(recipes);
-    print(JSON.decode(localStorage[_storagename]));
   }
 
-  void deleteInStorage(String recipe_url) {
-    favourites = favourites.where((i) => i["source_url"] != recipe_url);
-    localStorage[_storagename] = JSON.encode(favourites);
+  void deleteInStorage(String source_url) {
+    favourites = favourites.where((i) => i.source_url != source_url);
+    var encoded = favourites
+        .map((i) => JSON.encode({
+              "title": i.title,
+              "publisher": i.publisher,
+              "publisher_url": i.publisher_url,
+              "source_url": i.source_url,
+              "image_url": i.image_url
+            }))
+        .toList();
+    localStorage[_storagename] = JSON.encode(encoded);
   }
 
   List<Recipe> loadFromStorage() {
