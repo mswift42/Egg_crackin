@@ -8,7 +8,7 @@ import 'package:eggcrackin/components/tooltip-component/tooltip_component.dart';
     templateUrl: 'bookmark_component.html',
     styleUrls: const ['bookmark_component.css'],
     directives: const [TooltipComponent])
-  class FavouriteComponent {
+  class BookmarkComponent {
     @Input()
       String title;
     @Input()
@@ -22,7 +22,7 @@ import 'package:eggcrackin/components/tooltip-component/tooltip_component.dart';
 
     final FavouritesService _favouritesService;
 
-    FavouriteComponent(this._favouritesService);
+    BookmarkComponent(this._favouritesService);
 
     void bookmarkRecipe() {
       _favouritesService.saveToStorage(
