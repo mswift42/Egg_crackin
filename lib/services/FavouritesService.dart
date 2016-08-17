@@ -19,7 +19,7 @@ class FavouritesService {
       "publisher": recipe.publisher,
       "publisher_url": recipe.publisher_url,
       "source_url": recipe.source_url,
-      "image_url": recipe.source_url
+      "image_url": recipe.image_url
     }));
     localStorage[_storagename] = JSON.encode(recipes);
     print(JSON.decode(localStorage[_storagename]));
