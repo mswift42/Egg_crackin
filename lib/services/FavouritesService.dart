@@ -25,13 +25,9 @@ class FavouritesService {
     print(JSON.decode(localStorage[_storagename]));
   }
 
-  void deleteInStorage(Recipe recipe) {
-    var recipes = [];
-    if (localStorage[_storagename] != null) {
-      recipes = JSON.decode(localStorage[_storagename]);
-    }
-    recipes = recipes.where((i) => i["source_url"] != recipe.source_url);
-    localStorage[_storagename] = JSON.encode(recipes);
+  void deleteInStorage(String recipe_url) {
+    favourites = favourites.where((i) => i["source_url"] != recipe_url);
+    localStorage[_storagename] = JSON.encode(favourites);
   }
 
   List<Recipe> loadFromStorage() {
