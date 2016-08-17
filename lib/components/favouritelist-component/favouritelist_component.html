@@ -2,8 +2,10 @@
     <recipesview-component>
         <div *ngFor="let fav of favourites" class="singlefavourite">
             <title-component [title]="fav.title" [sourceurl]="fav.source_url"></title-component>
-            <img src="{{fav.source_url}}" alt="{{fav.title}}">
-            <publisherurl-component [publisher]="fav.publisher" [publisher_url]="fav.publisher_url"></publisherurl-component>
+            <recipeimage-component [imageurl]="fav.image_url" [alttext]="fav.title"></recipeimage-component>
+            <div class="mdl-card__actions">
+                <publisherurl-component [publisher]="fav.publisher" [publisher_url]="fav.publisher_url"></publisherurl-component>
+            </div>
         </div>
     </recipesview-component>
 </div>
