@@ -5,6 +5,7 @@ import 'package:eggcrackin/components/title-component/title_component.dart';
 import 'package:eggcrackin/components/publisherurl-component/publisherurl_component.dart';
 import 'package:eggcrackin/components/recipesview-component/recipesview.component.dart';
 import 'package:eggcrackin/components/recipeimage-component/recipeimage_component.dart';
+import 'package:eggcrackin/components/delete-bookmark-component/delete-bookmark_component.dart';
 
 @Component(
     selector: 'favouritelist-component',
@@ -16,7 +17,8 @@ import 'package:eggcrackin/components/recipeimage-component/recipeimage_componen
       TitleComponent,
       PublisherurlComponent,
       RecipeimageComponent,
-      RecipesViewComponent
+      RecipesViewComponent,
+      DeleteBookmarkComponent
     ])
 class FavouritelistComponent {
   List<Recipe> favourites;
