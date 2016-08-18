@@ -4,8 +4,8 @@
             <title-component [title]="fav.title" [sourceurl]="fav.source_url"></title-component>
             <recipeimage-component [imageurl]="fav.image_url" [alttext]="fav.title"></recipeimage-component>
             <div class="mdl-card__actions">
-                <publisherurl-component [publisher]="fav.publisher" [publisher_url]="fav.publisher_url"></publisherurl-component>
                 <delete-bookmark (onDelete)="deleteBookmark($event)" [source_url]="fav.source_url"></delete-bookmark>
+                <publisherurl-component [publisher]="fav.publisher" [publisher_url]="fav.publisher_url"></publisherurl-component>
             </div>
         </div>
     </recipesview-component>

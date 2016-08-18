@@ -5,3 +5,9 @@
 .mdl-card {
     margin:1em;
 }
+
+.mdl-card__actions {
+    display:flex;
+    flex-display: row;
+    justify-content:space-between;
+}
