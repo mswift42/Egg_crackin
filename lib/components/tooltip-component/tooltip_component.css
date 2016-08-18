@@ -5,6 +5,7 @@
 
 .tooltip-wrapper span {
     position: absolute;
+    font-size:0.8em;
     width:9em;
     color:#fff;
     background: #000;
@@ -24,15 +25,12 @@
     left: 50%;
     margin-left: -8px;
     width: 0; height: 0;
-    border-top: 8px solid #000000;
-    border-right: 8px solid transparent;
-    border-left: 8px solid transparent;
 }
 div:hover.tooltip-wrapper span {
     visibility: visible;
     opacity: 0.8;
     bottom: 30px;
     left: 50%;
-    margin-left: -76px;
+    margin-left: -20px;
     z-index: 999;
 }
