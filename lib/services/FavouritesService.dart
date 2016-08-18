@@ -7,7 +7,9 @@ import 'package:eggcrackin/services/Recipe.dart';
 class FavouritesService {
   Storage localStorage = window.localStorage;
   final _storagename = "recipes";
-  List<Recipe> favourites = [];
+  List<Recipe> _favourites = [];
+
+  List<Recipe> get favourites => _favourites;
 
   void saveToStorage(Recipe recipe) {
     var recipes = [];
@@ -25,8 +27,8 @@ class FavouritesService {
   }
 
   void deleteInStorage(String source_url) {
-    favourites = favourites.where((i) => i.source_url != source_url);
-    var encoded = favourites
+    _favourites = _favourites.where((i) => i.source_url != source_url);
+    var encoded = _favourites
         .map((i) => JSON.encode({
               "title": i.title,
               "publisher": i.publisher,
@@ -38,16 +40,15 @@ class FavouritesService {
     localStorage[_storagename] = JSON.encode(encoded);
   }
 
-  List<Recipe> loadFromStorage() {
+   loadFromStorage() {
     if (localStorage[_storagename] != null) {
       List<Map> favs = JSON.decode(localStorage[_storagename]);
-      favs.forEach((i) => favourites.add(new Recipe(
+      favs.forEach((i) => _favourites.add(new Recipe(
           JSON.decode(i)["publisher"],
           JSON.decode(i)["title"],
           JSON.decode(i)["source_url"],
           JSON.decode(i)["image_url"],
           JSON.decode(i)["publisher_url"])));
     }
-    return favourites;
   }
 }
