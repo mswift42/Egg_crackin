@@ -4,7 +4,7 @@ import 'dart:convert';
 
 @Injectable()
 class SearchhistoryService {
-  List<String> _searchhistory  = [];
+  List<String> _searchhistory = [];
   Storage localStorage = window.localStorage;
   final _storagename = "searchhistory";
 
@@ -18,9 +18,14 @@ class SearchhistoryService {
       }
     }
   }
+
   get searchHistory => _searchhistory;
 
   void saveToStorage() {
-   localStorage[_storagename] = JSON.encode(_searchhistory);
+    localStorage[_storagename] = JSON.encode(_searchhistory);
+  }
+
+  void loadFromStorage() {
+    _searchhistory = JSON.decode(localStorage[_storagename]);
   }
 }
