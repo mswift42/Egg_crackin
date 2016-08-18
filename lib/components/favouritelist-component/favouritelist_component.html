@@ -5,7 +5,7 @@
             <recipeimage-component [imageurl]="fav.image_url" [alttext]="fav.title"></recipeimage-component>
             <div class="mdl-card__actions">
                 <publisherurl-component [publisher]="fav.publisher" [publisher_url]="fav.publisher_url"></publisherurl-component>
-                <delete-bookmark [source_url]="fav.source_url"></delete-bookmark>
+                <delete-bookmark (onDelete)="deleteBookmark($event)" [source_url]="fav.source_url"></delete-bookmark>
             </div>
         </div>
     </recipesview-component>

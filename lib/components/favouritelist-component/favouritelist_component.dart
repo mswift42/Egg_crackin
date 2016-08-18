@@ -20,10 +20,18 @@ import 'package:eggcrackin/components/delete-bookmark-component/delete-bookmark_
       RecipesViewComponent,
       DeleteBookmarkComponent
     ])
-class FavouritelistComponent {
+class FavouritelistComponent implements OnInit {
   List<Recipe> favourites;
+  FavouritesService _favouriteService;
 
-  FavouritelistComponent(FavouritesService _favouriteService) {
-    favourites = _favouriteService.loadFromStorage();
+  FavouritelistComponent(this._favouriteService);
+
+  ngOnInit() {
+    _favouriteService.loadFromStorage();
+    favourites = _favouriteService.favourites;
+  }
+  deleteBookmark(String source_url) {
+    favourites = favourites.where((i) => i.source_url != source_url);
+    _favouriteService.deleteInStorage(source_url);
   }
 }
