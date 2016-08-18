@@ -1,1 +1,15 @@
 
+.mdl-navigation {
+    margin-top:4em;
+}
+.mdl-layout__drawer {
+    background: #343434;
+    color:#eaeaea;
+}
+.mdl-layout__drawer a {
+    color:#fafafa;
+}
+.mdl-layout__drawer a:hover {
+    background: #000;
+}
+
