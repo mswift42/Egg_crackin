@@ -1,6 +1,5 @@
 import 'package:angular2/core.dart';
 import 'package:eggcrackin/components/tooltip-component/tooltip_component.dart';
-import 'package:eggcrackin/services/FavouritesService.dart';
 
 @Component(
     selector: 'delete-bookmark',
@@ -9,11 +8,11 @@ import 'package:eggcrackin/services/FavouritesService.dart';
 class DeleteBookmarkComponent {
   @Input()
   String source_url;
-  FavouritesService _favouriteService;
 
-  DeleteBookmarkComponent(this._favouriteService);
+  @Output()
+  EventEmitter<String> onDelete = new EventEmitter<String>();
 
-  deleteBookmak() {
-    _favouriteService.deleteInStorage(source_url);
+  deleteBookmark() {
+    onDelete.emit(source_url);
   }
 }
