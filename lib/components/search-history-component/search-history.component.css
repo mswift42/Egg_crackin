@@ -1,0 +1,19 @@
+
+.searchhistory {
+    padding:1em;
+    color:#eaeaea;
+}
+span {
+    font-family: 'Roboto Mono', monospace;
+}
+hr {
+    margin:0em;
+    margin-top:1em;
+    margin-bottom:2em;
+    padding:0em;
+    min-width: 100%;
+    height: 2px;
+    border:0;
+    box-shadow:  inset 0 12px 12px -12px
+    rgba(255,255,255,0.5);
+}
