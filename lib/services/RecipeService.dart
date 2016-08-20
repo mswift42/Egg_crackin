@@ -12,13 +12,12 @@ class RecipeService {
 
   String queryUrl(String query) {
     var split = query.trim().split(" ");
-    var key = food2forkapikey;
-    var res = "http://food2fork.com/api/search?key=$key&q=";
-    res += split[0];
+    var url = "/searchrecipe?query=";
+    url += split[0];
     for (var s in split.sublist(1)) {
-      res += "&$s";
+      url += "+" + i;
     }
-    return res;
+    return url;
   }
 
   void loadData(String query) {
