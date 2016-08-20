@@ -4,13 +4,15 @@ runtime: go
 api_version: go1
 
 handlers:
-        - url: /(.*\.js)
-          static_files: build/web/js/\1
-          upload: build/web/(.*\.js)
+        - url: /js
+          static_dir: build/web/js
 
         - url: /css
-          static_files: build/web/css\1
-          upload: build/web/(.*\.css)
+          static_dir: build/web/css
+
+        - url: /main.dart.js
+          static_files: build/web/main.dart.js
+          upload: build/web/(.*\.js)
 
         - url: /searchrecipe
           script: _go_app
