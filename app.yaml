@@ -1,0 +1,34 @@
+application: eggcrackin
+version: 1
+runtime: go
+api_version: go1
+
+handlers:
+        - url: /(.*\.js)
+          static_files: build/web/js/\1
+          upload: build/web/(.*\.js)
+
+        - url: /css
+          static_files: build/web/css\1
+          upload: build/web/(.*\.css)
+
+        - url: /searchrecipe
+          script: _go_app
+        - url: /
+          static_files: build/web/index.html
+          upload: build/web/(.*\.html)
+        - url: /recipesearch
+          static_files: build/web/index.html
+          upload: build/web/(.*\.html)
+        - url: /about
+          static_files: build/web/index.html
+          upload: build/web/(.*\.html)
+        - url: /favourites
+          static_files: build/web/index.html
+          upload: build/web/(.*\.html)
+skip_files:
+        - ^packages$
+        - packages
+        - ^tmp$
+        - ^(.*/)?\.dart
+
