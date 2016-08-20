@@ -20,15 +20,17 @@ import 'package:eggcrackin/components/favouritelist-component/favouritelist_comp
     directives: const [
       NavbarComponent,
     ])
-
 @RouteConfig(const [
+  const Route(path: '', component: RecipeComponent),
   const Route(
-      path: '/recipes',
+      path: '/recipesearch',
       name: 'Recipes',
       component: RecipeComponent,
       useAsDefault: true),
   const Route(
-      path: '/favourites', name: 'Favourites', component: FavouritelistComponent),
+      path: '/favourites',
+      name: 'Favourites',
+      component: FavouritelistComponent),
   const Route(path: '/about', name: 'About', component: AboutComponent)
 ])
 class AppComponent {}
