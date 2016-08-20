@@ -15,7 +15,7 @@ class RecipeService {
     var url = "/searchrecipe?query=";
     url += split[0];
     for (var s in split.sublist(1)) {
-      url += "+" + i;
+      url += "+" + s;
     }
     return url;
   }
