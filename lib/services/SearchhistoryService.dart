@@ -21,6 +21,14 @@ class SearchhistoryService {
 
   get searchHistory => _searchhistory;
 
+  bool isEmpty() {
+    return _searchhistory.length > 0;
+  }
+
+  String firstEntry() {
+    return _searchhistory[0];
+  }
+
   void saveToStorage() {
     localStorage[_storagename] = JSON.encode(_searchhistory);
   }
