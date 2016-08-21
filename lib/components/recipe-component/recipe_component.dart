@@ -23,12 +23,18 @@ import 'package:eggcrackin/components/recipesview-component/recipesview.componen
       RecipeSearchComponent,
       RecipesViewComponent
     ])
-class RecipeComponent {
+class RecipeComponent implements OnInit {
   final RecipeService _recservice;
   final SearchhistoryService _searchhistoryservice;
   List<Recipe> recipes;
 
   RecipeComponent(this._recservice, this._searchhistoryservice);
+
+  ngOnInit() {
+    if (_searchhistoryservice.notEmpty()) {
+    searchRecipes(_searchhistoryservice.firstEntry());
+    }
+  }
 
   searchRecipes(String value) {
     _recservice.recipes = [];

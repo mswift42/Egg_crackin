@@ -21,7 +21,7 @@ class SearchhistoryService {
 
   get searchHistory => _searchhistory;
 
-  bool isEmpty() {
+  bool notEmpty() {
     return _searchhistory.length > 0;
   }
 
