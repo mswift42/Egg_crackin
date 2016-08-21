@@ -26,6 +26,8 @@ class SearchhistoryService {
   }
 
   void loadFromStorage() {
-    _searchhistory = JSON.decode(localStorage[_storagename]);
+    if (localStorage[_storagename] != null) {
+      JSON.decode(localStorage[_storagename]);
+    }
   }
 }
