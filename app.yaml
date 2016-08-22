@@ -34,3 +34,4 @@ skip_files:
         - ^tmp$
         - ^(.*/)?\.dart
 
+default_expiration: "30d"
