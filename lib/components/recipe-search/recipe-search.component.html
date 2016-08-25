@@ -1,6 +1,6 @@
-<div class="mdl-textfield mdl-js-textfield">
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input #rec class="mdl-textfield__input" type="text" id="recipesearch"
-    placeholder="Search for recipes or ingredients"
     (keyup.enter)="searchRecipes(rec.value)">
-    <label class="mdl-textfield__label" for="recipesearch">Search...</label>
+    <label class="mdl-textfield__label"
+    for="recipesearch">Search for recipes or ingredients</label>
   </div>
