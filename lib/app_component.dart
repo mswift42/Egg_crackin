@@ -4,6 +4,7 @@ import 'package:eggcrackin/components/navbar-component/navbar_component.dart';
 import 'package:eggcrackin/services/RecipeService.dart';
 import 'package:eggcrackin/services/FavouritesService.dart';
 import 'package:eggcrackin/services/SearchhistoryService.dart';
+import 'package:eggcrackin/services/ToastService.dart';
 import 'package:eggcrackin/components/about-component/about_component.dart';
 import 'package:eggcrackin/components/recipe-component/recipe_component.dart';
 import 'package:eggcrackin/components/favouritelist-component/favouritelist_component.dart';
@@ -15,6 +16,7 @@ import 'package:eggcrackin/components/favouritelist-component/favouritelist_comp
       RecipeService,
       FavouritesService,
       SearchhistoryService,
+      ToastService,
       ROUTER_PROVIDERS
     ],
     directives: const [
