@@ -9,13 +9,11 @@ class SearchhistoryService {
   final _storagename = "searchhistory";
 
   void saveSearch(String query) {
-    if (!(_searchhistory.contains(query))) {
-      _searchhistory.insert(0, query);
+    _searchhistory.insert(0, query);
+    saveToStorage();
+    if (_searchhistory.length > 10) {
+      _searchhistory.removeLast();
       saveToStorage();
-      if (_searchhistory.length > 10) {
-        _searchhistory.removeLast();
-        saveToStorage();
-      }
     }
   }
 
