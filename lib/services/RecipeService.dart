@@ -20,7 +20,14 @@ class RecipeService {
     return url;
   }
 
-  void loadData(String query) {
+  String addPage(String query, num pagenumber) {
+    return query + '&page=${pagenumber}';
+  }
+
+  void loadData(String query, [num pagenumber]) {
+    if (pagenumber != null) {
+      var request = HttpRequest.getString(queryUrl(addPage(query, pagenumber)));
+    }
     var request = HttpRequest.getString(queryUrl(query)).then(onDataLoaded);
   }
 
