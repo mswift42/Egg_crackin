@@ -26,9 +26,12 @@ class RecipeService {
 
   void loadData(String query, [num pagenumber]) {
     if (pagenumber != null) {
-      var request = HttpRequest.getString(queryUrl(addPage(query, pagenumber)));
+      var request = HttpRequest
+          .getString(queryUrl(addPage(query, pagenumber)))
+          .then(onDataLoaded);
+    } else {
+      var request = HttpRequest.getString(queryUrl(query)).then(onDataLoaded);
     }
-    var request = HttpRequest.getString(queryUrl(query)).then(onDataLoaded);
   }
 
   String unsanitize(String s) {
