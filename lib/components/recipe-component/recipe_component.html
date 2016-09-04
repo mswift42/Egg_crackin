@@ -12,3 +12,9 @@
     </div>
   </div>
 </recipesview-component>
+<div *ngIf="recipes.length == 30" class="nextbutton">
+  <button (click)="showNextPage()"
+          class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+    <i class="material-icons">add</i>
+  </button>
+</div>

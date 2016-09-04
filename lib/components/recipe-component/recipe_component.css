@@ -16,3 +16,8 @@
     flex-direction:row;
     justify-content: space-between;
 }
+
+.nextbutton {
+    display:flex;
+    align-items:center;
+}
