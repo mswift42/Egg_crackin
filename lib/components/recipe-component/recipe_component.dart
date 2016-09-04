@@ -32,7 +32,8 @@ class RecipeComponent implements OnInit {
 
   ngOnInit() {
     if (_searchhistoryservice.notEmpty()) {
-    searchRecipes(_searchhistoryservice.firstEntry());
+    _recservice.loadData(_searchhistoryservice.firstEntry());
+      recipes = _recservice.recipes;
     }
   }
 
@@ -41,5 +42,12 @@ class RecipeComponent implements OnInit {
     _recservice.loadData(value);
     recipes = _recservice.recipes;
     _searchhistoryservice.saveSearch(value);
+  }
+
+  showNextPage() {
+    _recservice.incCurrentPage();
+    _recservice.recipes = [];
+    _recservice.loadData(_searchhistoryservice.firstEntry());
+    recipes = _recservice.recipes;
   }
 }
