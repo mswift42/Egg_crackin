@@ -8,8 +8,13 @@ import 'package:eggcrackin/services/Recipe.dart';
 class RecipeService {
   final String _food2forkapikey = '7987c43afcf8a03a964bbcb0c9152c84';
   List<Recipe> recipes = [];
+  int _currentpage = 1;
 
   String get food2forkapikey => _food2forkapikey;
+
+  void incCurrentPage() {
+    _currentpage++;
+  }
 
   String queryUrl(String query) {
     var split = query.trim().split(" ");
@@ -25,14 +30,10 @@ class RecipeService {
     return query + '&page=${pagenumber}';
   }
 
-  void loadData(String query, [num pagenumber]) {
-    if (pagenumber != null) {
+  void loadData(String query) {
       var request = HttpRequest
-          .getString(queryUrl(addPage(query, pagenumber)))
+          .getString(queryUrl(addPage(query, _currentpage)))
           .then(onDataLoaded);
-    } else {
-      var request = HttpRequest.getString(queryUrl(query)).then(onDataLoaded);
-    }
   }
 
   String unsanitize(String s) {
