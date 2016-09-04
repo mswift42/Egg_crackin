@@ -22,7 +22,11 @@ const (
 func getRecipes(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Type", "application/json")
 	query := r.FormValue("query")
+	page := r.FormValue("page")
 	url := searchURL(query)
+	if page != "" {
+		url += "&page=" + page
+	}
 	ctx := appengine.NewContext(r)
 	client := urlfetch.Client(ctx)
 	recipes, err := client.Get(url)
