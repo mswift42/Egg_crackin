@@ -21,7 +21,7 @@ import 'package:eggcrackin/components/delete-bookmark-component/delete-bookmark_
       DeleteBookmarkComponent
     ])
 class FavouritelistComponent implements OnInit {
-  List<Recipe> favourites;
+  List<Recipe> favourites = [];
   FavouritesService _favouriteService;
 
   FavouritelistComponent(this._favouriteService);
