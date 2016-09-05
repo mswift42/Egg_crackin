@@ -1,4 +1,4 @@
-<div *ngIf="favourites != null" class="favouritelist">
+<div class="favouritelist">
     <recipesview-component>
         <div *ngFor="let fav of favourites" class="mdl-card mdl-shadow--2dp singlefavourite">
             <title-component [title]="fav.title" [sourceurl]="fav.source_url"></title-component>
