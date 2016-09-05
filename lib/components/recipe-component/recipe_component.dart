@@ -8,6 +8,9 @@ import 'package:eggcrackin/components/publisherurl-component/publisherurl_compon
 import 'package:eggcrackin/components/bookmark-component/bookmark_component.dart';
 import 'package:eggcrackin/components/recipe-search/recipe-search.component.dart';
 import 'package:eggcrackin/components/recipesview-component/recipesview.component.dart';
+import 'package:eggcrackin/components/toast-component/toast.component.dart';
+import 'package:eggcrackin/services/ToastService.dart';
+
 
 @Component(
     selector: 'recipe-component',
@@ -21,14 +24,16 @@ import 'package:eggcrackin/components/recipesview-component/recipesview.componen
       PublisherurlComponent,
       BookmarkComponent,
       RecipeSearchComponent,
-      RecipesViewComponent
+      RecipesViewComponent,
+      ToastComponent
     ])
 class RecipeComponent implements OnInit {
   final RecipeService _recservice;
   final SearchhistoryService _searchhistoryservice;
+  final ToastService _toastService;
   List<Recipe> recipes;
 
-  RecipeComponent(this._recservice, this._searchhistoryservice);
+  RecipeComponent(this._recservice, this._searchhistoryservice, this._toastService);
 
   ngOnInit() {
     if (_searchhistoryservice.notEmpty()) {
@@ -42,6 +47,12 @@ class RecipeComponent implements OnInit {
     _recservice.loadData(value);
     recipes = _recservice.recipes;
     _searchhistoryservice.saveSearch(value);
+  }
+  void showToast(bool status) {
+    _toastService.toggleShow();
+  }
+  bool toggleToast() {
+    return _toastService.show;
   }
 
   showNextPage() {
