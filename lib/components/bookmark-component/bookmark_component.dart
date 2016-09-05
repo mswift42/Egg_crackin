@@ -28,8 +28,8 @@ class BookmarkComponent {
   BookmarkComponent(this._favouritesService);
 
   void bookmarkRecipe() {
-    _favouritesService.saveToStorage(
-        new Recipe(publisher, title, source_url, image_url, publisher_url));
+    var recipe = new Recipe(publisher, title, source_url, image_url, publisher_url);
+    _favouritesService.saveToStorage(recipe);
     onShow.emit(true);
   }
 }
