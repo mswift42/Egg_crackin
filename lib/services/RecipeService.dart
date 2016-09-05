@@ -38,6 +38,7 @@ class RecipeService {
 
   String unsanitize(String s) {
     s = s.replaceAll("&nbsp;", " ");
+    s = s.replaceAll("&#8217;", "'");
     return s.replaceAll("&amp;", "&");
   }
 
