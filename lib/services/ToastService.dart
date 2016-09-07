@@ -5,10 +5,11 @@ import 'dart:async';
 class ToastService {
   bool _show = false;
 
-  toggleShow() {
+  void toggleShow() {
     _show = !show;
     var timer = new Timer(const Duration(seconds: 3), () => _show = false);
+    timer.cancel;
   }
 
-  get show => _show;
+  bool get show => _show;
 }
