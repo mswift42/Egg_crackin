@@ -27,7 +27,7 @@ class RecipeService {
   }
 
   String addPage(String query, num pagenumber) {
-    return query + '&page=${pagenumber}';
+    return query + '&page=$pagenumber';
   }
 
   void loadData(String query) {
@@ -37,7 +37,7 @@ class RecipeService {
   }
 
   void onDataLoaded(String response) {
-    List<String> rec = JSON.decode(response)["recipes"];
+    List rec = JSON.decode(response)["recipes"];
     rec.forEach((i) => recipes.add(new Recipe.fromJsonMap(i)));
   }
 }
