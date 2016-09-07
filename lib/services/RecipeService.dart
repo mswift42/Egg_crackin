@@ -31,9 +31,9 @@ class RecipeService {
   }
 
   void loadData(String query) {
-    var request = HttpRequest
-        .getString(queryUrl(addPage(query, _currentpage)))
-        .then(onDataLoaded);
+    HttpRequest
+      .getString(queryUrl(addPage(query, _currentpage)))
+      .then(onDataLoaded);
   }
 
   void onDataLoaded(String response) {
