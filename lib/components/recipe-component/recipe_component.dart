@@ -42,7 +42,7 @@ class RecipeComponent implements OnInit {
     }
   }
 
-  searchRecipes(String value) {
+  void searchRecipes(String value) {
     _recservice.recipes = [];
     _recservice.loadData(value);
     recipes = _recservice.recipes;
@@ -55,7 +55,7 @@ class RecipeComponent implements OnInit {
     return _toastService.show;
   }
 
-  showNextPage() {
+  void showNextPage() {
     _recservice.incCurrentPage();
     _recservice.recipes = [];
     _recservice.loadData(_searchhistoryservice.firstEntry());
