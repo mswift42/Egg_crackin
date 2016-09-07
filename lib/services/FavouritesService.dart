@@ -40,7 +40,7 @@ class FavouritesService {
     localStorage[_storagename] = JSON.encode(encoded);
   }
 
-  loadFromStorage() {
+  void loadFromStorage() {
     if (localStorage[_storagename] != null) {
       List<Map> favs = JSON.decode(localStorage[_storagename]);
       favs.forEach((i) => _favourites.add(new Recipe(

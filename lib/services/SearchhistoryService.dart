@@ -17,7 +17,7 @@ class SearchhistoryService {
     }
   }
 
-  get searchHistory => _searchhistory;
+  List<String> get searchHistory => _searchhistory;
 
   bool notEmpty() {
     return _searchhistory.length > 0;
