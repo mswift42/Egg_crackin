@@ -34,8 +34,9 @@ class RecipeComponent implements OnInit {
   List<Recipe> recipes;
 
   RecipeComponent(this._recservice, this._searchhistoryservice, this._toastService);
-
-  ngOnInit() {
+  
+  @override
+  void ngOnInit() {
     if (_searchhistoryservice.notEmpty()) {
     _recservice.loadData(_searchhistoryservice.firstEntry());
       recipes = _recservice.recipes;
