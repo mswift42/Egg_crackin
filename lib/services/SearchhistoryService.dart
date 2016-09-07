@@ -4,7 +4,7 @@ import 'dart:convert';
 
 @Injectable()
 class SearchhistoryService {
-  List<String> _searchhistory = [];
+  List _searchhistory = [];
   Storage localStorage = window.localStorage;
   final _storagename = "searchhistory";
 
@@ -17,7 +17,7 @@ class SearchhistoryService {
     }
   }
 
-  List<String> get searchHistory => _searchhistory;
+  List get searchHistory => _searchhistory;
 
   bool notEmpty() {
     return _searchhistory.length > 0;
