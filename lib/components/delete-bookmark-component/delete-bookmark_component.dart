@@ -13,7 +13,7 @@ class DeleteBookmarkComponent {
   @Output()
   EventEmitter<String> onDelete = new EventEmitter<String>();
 
-  deleteBookmark() {
+  void deleteBookmark() {
     onDelete.emit(source_url);
   }
 }

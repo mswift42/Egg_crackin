@@ -26,11 +26,12 @@ class FavouritelistComponent implements OnInit {
 
   FavouritelistComponent(this._favouriteService);
 
-  ngOnInit() {
+  @override
+  void ngOnInit() {
     _favouriteService.loadFromStorage();
     favourites = _favouriteService.favourites;
   }
-  deleteBookmark(String source_url) {
+  void deleteBookmark(String source_url) {
     favourites = favourites.where((i) => i.source_url != source_url);
     _favouriteService.deleteInStorage(source_url);
   }
