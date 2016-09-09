@@ -8,7 +8,7 @@ class RecipeSearchComponent {
   @Output()
   EventEmitter<String> onSearch = new EventEmitter<String>();
 
-  searchRecipes(String query) {
+  void searchRecipes(String query) {
     onSearch.emit(query);
   }
 }

@@ -6,7 +6,7 @@ import 'package:eggcrackin/services/SearchhistoryService.dart';
     templateUrl: 'search-history.component.html',
     styleUrls: const ['search-history.component.css'])
 class SearchHistoryComponent {
-  List<String> searchhistory;
+  List<dynamic> searchhistory;
 
   SearchHistoryComponent(SearchhistoryService _searchhistoryService) {
     _searchhistoryService.loadFromStorage();
