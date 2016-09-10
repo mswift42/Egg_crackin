@@ -8,6 +8,8 @@ import 'package:eggcrackin/services/Recipe.dart';
 class RecipeService {
   final String _food2forkapikey = '7987c43afcf8a03a964bbcb0c9152c84';
   List<Recipe> recipes = [];
+  List<Recipe> _nextPage = [];
+  List<Recipe> _prevPage = [];
   int _currentpage = 1;
 
   String get food2forkapikey => _food2forkapikey;
