@@ -9,6 +9,7 @@ dependencies:
 dev_dependencies:
   browser: ^0.10.0
   test: ^0.12.13+1
+  quiver:
 transformers:
 - angular2:
     platform_directives:
@@ -17,3 +18,5 @@ transformers:
     - 'package:angular2/common.dart#COMMON_PIPES'
     entry_points: web/main.dart
 - dart_to_js_script_rewriter
+- test/pub_serve:
+    $include: test/**_test.dart
