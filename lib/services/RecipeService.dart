@@ -35,10 +35,10 @@ class RecipeService {
     return query + '&page=$pagenumber';
   }
 
-  void loadData(String query) {
+  void loadData(String query, Function callback) {
     HttpRequest
       .getString(queryUrl(addPage(query, _currentpage)))
-      .then(onDataLoaded);
+      .then(callback);
   }
 
   void onDataLoaded(String response) {
