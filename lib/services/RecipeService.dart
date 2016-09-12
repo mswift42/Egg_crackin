@@ -4,6 +4,7 @@ import 'package:angular2/core.dart';
 
 import 'package:eggcrackin/services/Recipe.dart';
 
+
 @Injectable()
 class RecipeService {
   final String _food2forkapikey = '7987c43afcf8a03a964bbcb0c9152c84';
@@ -45,5 +46,18 @@ class RecipeService {
   void onDataLoaded(String response) {
     List rec = JSON.decode(response)["recipes"];
     rec.forEach((i) => recipes.add(new Recipe.fromJsonMap(i)));
+  }
+
+  void cacheNextPage(String query) {
+    incCurrentPage();
+    HttpRequest
+        .getString(queryUrl(addPage(query, _currentpage)))
+        .then(saveNextPage);
+    decCurrentPage();
+  }
+
+  void saveNextPage(String response) {
+    List rec = JSON.decode(response)["recipes"];
+    rec.forEach((i) => _nextPage.add(new Recipe.fromJsonMap(i)));
   }
 }
