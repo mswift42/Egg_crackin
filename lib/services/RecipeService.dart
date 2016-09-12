@@ -17,6 +17,9 @@ class RecipeService {
   void incCurrentPage() {
     _currentpage++;
   }
+  void decCurrentPage() {
+    _currentpage--;
+  }
 
   String queryUrl(String query) {
     var split = query.trim().split(" ");
