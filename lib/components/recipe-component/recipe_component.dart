@@ -11,7 +11,6 @@ import 'package:eggcrackin/components/recipesview-component/recipesview.componen
 import 'package:eggcrackin/components/toast-component/toast.component.dart';
 import 'package:eggcrackin/services/ToastService.dart';
 
-
 @Component(
     selector: 'recipe-component',
     templateUrl: 'recipe_component.html',
@@ -33,12 +32,13 @@ class RecipeComponent implements OnInit {
   final ToastService _toastService;
   List<Recipe> recipes;
 
-  RecipeComponent(this._recservice, this._searchhistoryservice, this._toastService);
-  
+  RecipeComponent(
+      this._recservice, this._searchhistoryservice, this._toastService);
+
   @override
   void ngOnInit() {
     if (_searchhistoryservice.notEmpty()) {
-    _recservice.loadData(_searchhistoryservice.firstEntry());
+      _recservice.loadData(_searchhistoryservice.firstEntry());
       recipes = _recservice.recipes;
     }
   }
@@ -49,9 +49,11 @@ class RecipeComponent implements OnInit {
     recipes = _recservice.recipes;
     _searchhistoryservice.saveSearch(value);
   }
+
   void showToast(bool status) {
     _toastService.toggleShow();
   }
+
   bool toggleToast() {
     return _toastService.show;
   }
