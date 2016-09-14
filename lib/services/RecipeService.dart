@@ -4,7 +4,6 @@ import 'package:angular2/core.dart';
 
 import 'package:eggcrackin/services/Recipe.dart';
 
-
 @Injectable()
 class RecipeService {
   final String _food2forkapikey = '7987c43afcf8a03a964bbcb0c9152c84';
