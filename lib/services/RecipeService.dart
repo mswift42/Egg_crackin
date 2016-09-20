@@ -40,7 +40,10 @@ class RecipeService {
   void loadData(String query) {
     HttpRequest
       .getString(queryUrl(addPage(query, _currentpage)))
-      .then(onDataLoaded);
+      .then((String response) {
+        onDataLoaded(response);
+      })
+      .catchError(handleError);
   }
 
   void onDataLoaded(String response) {
