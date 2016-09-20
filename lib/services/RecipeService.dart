@@ -39,11 +39,10 @@ class RecipeService {
 
   void loadData(String query) {
     HttpRequest
-      .getString(queryUrl(addPage(query, _currentpage)))
-      .then((String response) {
-        onDataLoaded(response);
-      })
-      .catchError(handleError);
+        .getString(queryUrl(addPage(query, _currentpage)))
+        .then((String response) {
+      onDataLoaded(response);
+    }).catchError(handleError);
   }
 
   void onDataLoaded(String response) {
@@ -54,11 +53,10 @@ class RecipeService {
   void cacheNextPage(String query) {
     incCurrentPage();
     HttpRequest
-      .getString(queryUrl(addPage(query, _currentpage)))
-      .then((String response) {
-        saveNextPage(response);
-      })
-      .catchError(handleError);
+        .getString(queryUrl(addPage(query, _currentpage)))
+        .then((String response) {
+      saveNextPage(response);
+    }).catchError(handleError);
     decCurrentPage();
   }
 
@@ -66,6 +64,7 @@ class RecipeService {
     List rec = JSON.decode(response)["recipes"];
     rec.forEach((i) => _nextPage.add(new Recipe.fromJsonMap(i)));
   }
+
   void handleError(Error error) {
     togglefood2forkStatus();
   }
