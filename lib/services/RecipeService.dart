@@ -11,6 +11,7 @@ class RecipeService {
   List<Recipe> _nextPage = [];
   List<Recipe> _prevPage = [];
   int _currentpage = 1;
+  bool food2forkIsDown = false;
 
   String get food2forkapikey => _food2forkapikey;
 
@@ -38,8 +39,8 @@ class RecipeService {
 
   void loadData(String query) {
     HttpRequest
-        .getString(queryUrl(addPage(query, _currentpage)))
-        .then(onDataLoaded);
+      .getString(queryUrl(addPage(query, _currentpage)))
+      .then(onDataLoaded);
   }
 
   void onDataLoaded(String response) {
@@ -50,13 +51,23 @@ class RecipeService {
   void cacheNextPage(String query) {
     incCurrentPage();
     HttpRequest
-        .getString(queryUrl(addPage(query, _currentpage)))
-        .then(saveNextPage);
+      .getString(queryUrl(addPage(query, _currentpage)))
+      .then((String response) {
+        saveNextPage(response);
+      })
+      .catchError(handleError);
     decCurrentPage();
   }
 
   void saveNextPage(String response) {
     List rec = JSON.decode(response)["recipes"];
     rec.forEach((i) => _nextPage.add(new Recipe.fromJsonMap(i)));
+  }
+  void handleError(Error error) {
+    togglefood2forkStatus();
+  }
+
+  void togglefood2forkStatus() {
+    food2forkIsDown = !food2forkIsDown;
   }
 }
