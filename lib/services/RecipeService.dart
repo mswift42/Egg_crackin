@@ -23,6 +23,8 @@ class RecipeService {
     _currentpage--;
   }
 
+  int get currentpage => _currentpage;
+
   String queryUrl(String query) {
     var split = query.trim().split(" ");
     var url = "/searchrecipe?query=";
@@ -37,17 +39,21 @@ class RecipeService {
     return query + '&page=$pagenumber';
   }
 
-  void loadData(String query) {
+  void loadData(String query, num pagenumber) {
     HttpRequest
         .getString(queryUrl(addPage(query, _currentpage)))
         .then((String response) {
-      onDataLoaded(response);
+      onDataLoaded(response, pagenumber);
     }).catchError(handleError);
   }
 
-  void onDataLoaded(String response) {
+  void onDataLoaded(String response, num pagenumber) {
     List rec = JSON.decode(response)["recipes"];
-    rec.forEach((i) => recipes.add(new Recipe.fromJsonMap(i)));
+    if (pagenumber > _currentpage) {
+      rec.forEach((i) => _nextPage.add(new Recipe.fromJsonMap(i)));
+    } else {
+      rec.forEach((i) => recipes.add(new Recipe.fromJsonMap(i)));
+    }
   }
 
   void cacheNextPage(String query) {
@@ -65,11 +71,11 @@ class RecipeService {
     rec.forEach((i) => _nextPage.add(new Recipe.fromJsonMap(i)));
   }
 
-  void handleError(Error error) {
-    togglefood2forkStatus();
-  }
-
   void togglefood2forkStatus() {
     food2forkIsDown = !food2forkIsDown;
+  }
+
+  void handleError(Error error) {
+    togglefood2forkStatus();
   }
 }
