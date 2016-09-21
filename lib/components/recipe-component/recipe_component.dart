@@ -45,7 +45,7 @@ class RecipeComponent implements OnInit {
 
   void searchRecipes(String value) {
     _recservice.recipes = [];
-    _recservice.loadData(value, _recservice.currentpage);
+    _recservice.loadData(value);
     recipes = _recservice.recipes;
     _searchhistoryservice.saveSearch(value);
   }
@@ -61,7 +61,7 @@ class RecipeComponent implements OnInit {
   void showNextPage() {
     _recservice.incCurrentPage();
     _recservice.recipes = [];
-    _recservice.loadData(_searchhistoryservice.firstEntry(), _recservice.currentpage);
+    _recservice.loadData(_searchhistoryservice.firstEntry());
     recipes = _recservice.recipes;
   }
 }

@@ -39,11 +39,15 @@ class RecipeService {
     return query + '&page=$pagenumber';
   }
 
-  void loadData(String query, num pagenumber) {
+  void loadData(String query, [num pagenumber]) {
     HttpRequest
         .getString(queryUrl(addPage(query, _currentpage)))
         .then((String response) {
-      onDataLoaded(response, pagenumber);
+      if (pagenumber != null) {
+        onDataLoaded(response, pagenumber);
+      } else {
+        onDataLoaded(response, _currentpage);
+      }
     }).catchError(handleError);
   }
 
