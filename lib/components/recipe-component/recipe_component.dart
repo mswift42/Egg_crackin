@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:angular2/core.dart';
 import 'package:eggcrackin/services/Recipe.dart';
 import 'package:eggcrackin/services/RecipeService.dart';
@@ -31,16 +33,20 @@ class RecipeComponent implements OnInit {
   final SearchhistoryService _searchhistoryservice;
   final ToastService _toastService;
   List<Recipe> recipes;
+  ElementRef elementRef;
+  bool noResults = false;
 
-  RecipeComponent(
-      this._recservice, this._searchhistoryservice, this._toastService);
+  RecipeComponent(this._recservice, this._searchhistoryservice,
+      this._toastService, this.elementRef);
 
   @override
   void ngOnInit() {
     if (_searchhistoryservice.notEmpty()) {
-      _recservice.loadData(_searchhistoryservice.firstEntry(), _recservice.currentpage);
+      _recservice.loadData(
+          _searchhistoryservice.firstEntry(), _recservice.currentpage);
       recipes = _recservice.recipes;
     }
+    elementRef.nativeElement.onScroll.listen((event) => print("it's scrolling"));
   }
 
   void searchRecipes(String value) {
@@ -48,6 +54,7 @@ class RecipeComponent implements OnInit {
     _recservice.loadData(value);
     recipes = _recservice.recipes;
     _searchhistoryservice.saveSearch(value);
+
   }
 
   void showToast(bool status) {
