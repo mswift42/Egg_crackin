@@ -9,9 +9,11 @@ class RecipeService {
   final String _food2forkapikey = '7987c43afcf8a03a964bbcb0c9152c84';
   List<Recipe> recipes = [];
   List<Recipe> _nextPage = [];
+
   List<Recipe> _prevPage = [];
   int _currentpage = 1;
   bool food2forkIsDown = false;
+  bool _noResults = false;
 
   String get food2forkapikey => _food2forkapikey;
 
@@ -82,4 +84,6 @@ class RecipeService {
   void handleError(Error error) {
     togglefood2forkStatus();
   }
+
+  bool get noResults => _noResults;
 }

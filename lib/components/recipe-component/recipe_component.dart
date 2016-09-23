@@ -34,7 +34,6 @@ class RecipeComponent implements OnInit {
   final ToastService _toastService;
   List<Recipe> recipes;
   ElementRef elementRef;
-  bool noResults = false;
 
   RecipeComponent(this._recservice, this._searchhistoryservice,
       this._toastService, this.elementRef);
@@ -51,23 +50,16 @@ class RecipeComponent implements OnInit {
   }
 
   void searchRecipes(String value) {
-    noResults = false;
     _recservice.recipes = [];
     _recservice.loadData(value);
     recipes = _recservice.recipes;
     _searchhistoryservice.saveSearch(value);
-    checkIfResults();
   }
 
   void showToast(bool status) {
     _toastService.toggleShow();
   }
 
-  void checkIfResults() {
-    if (recipes.length == 0) {
-      noResults = true;
-    }
-  }
 
   bool toggleToast() {
     return _toastService.show;
