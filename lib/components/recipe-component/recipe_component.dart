@@ -46,19 +46,27 @@ class RecipeComponent implements OnInit {
           _searchhistoryservice.firstEntry(), _recservice.currentpage);
       recipes = _recservice.recipes;
     }
-    elementRef.nativeElement.onScroll.listen((event) => print("it's scrolling"));
+    elementRef.nativeElement.onScroll
+        .listen((event) => print("it's scrolling"));
   }
 
   void searchRecipes(String value) {
+    noResults = false;
     _recservice.recipes = [];
     _recservice.loadData(value);
     recipes = _recservice.recipes;
     _searchhistoryservice.saveSearch(value);
-
+    checkIfResults();
   }
 
   void showToast(bool status) {
     _toastService.toggleShow();
+  }
+
+  void checkIfResults() {
+    if (recipes.length == 0) {
+      noResults = true;
+    }
   }
 
   bool toggleToast() {
